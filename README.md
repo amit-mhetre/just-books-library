@@ -1,25 +1,28 @@
-== Just Books Library API
+Just Books Library API
+============
 
 This application provides API for books library with simple full text search.
 
-== Requirements
+Requirements
+--------
 
-=== Ruby and Rails
+Ruby and Rails
 
-Ruby version <b>2.3.1</b> and Rails version <b>5.1.4</b>
+	Ruby version <b>2.3.1</b> and Rails version <b>5.1.4</b>
 
-=== Database
+Database
 
-MongoDB
+	MongoDB
 
-== API documentation
 
+API documentation
+--------
 1. WS name: Sign Up
 POST /api/v1/users/sign_up HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 
-Request body:
+Request:
 {
 	"user" : {
 		"email" : "amit@example.com",
@@ -64,12 +67,10 @@ Host: localhost:3000
 Authorization: Bearer xxxxxxxx
 Content-Type: application/json
 
-Request body:
+Request:
 {
 	"keyword" : "Daffodil"
 }
-
-
 
 Response:
 {
