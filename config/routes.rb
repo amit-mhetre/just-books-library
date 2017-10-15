@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       constraints format: :json do
         devise_for :users
+        post  'books/search' => 'books#search'
       end
     end
   end

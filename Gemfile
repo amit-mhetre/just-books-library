@@ -43,3 +43,5 @@ gem 'jwt', '1.5.1'
 gem 'mongoid', '~> 6.2.0'
 
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+# Gem to search using keywords
+gem 'mongoid_search'

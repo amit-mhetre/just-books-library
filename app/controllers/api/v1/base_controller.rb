@@ -51,7 +51,7 @@ module Api
       end
 
       # Render unauthorized access
-      def render_unauthorized(payload = { errors: { unauthorized: ['You are not authorized perform this action.'] } })
+      def render_unauthorized(payload = { status: 401, errors: { unauthorized: ['You are not authorized perform this action.'] } })
         render json: payload, status: 200
       end
 
