@@ -1,24 +1,89 @@
-# README
+== Just Books Library API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application provides API for books library with simple full text search.
 
-Things you may want to cover:
+== Requirements
 
-* Ruby version
+=== Ruby and Rails
 
-* System dependencies
+Ruby version <b>2.3.1</b> and Rails version <b>5.1.4</b>
 
-* Configuration
+=== Database
 
-* Database creation
+MongoDB
 
-* Database initialization
+== API documentation
 
-* How to run the test suite
+1. WS name: Sign Up
+POST /api/v1/users/sign_up HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
 
-* Services (job queues, cache servers, search engines, etc.)
+Request body:
+{
+	"user" : {
+		"email" : "amit@example.com",
+		"password" : "xxxxxxxx"
+	}
+}
 
-* Deployment instructions
+Response:
+{
+    "status": 200,
+    "message": "Successfully signed up",
+    "email": "amit@example.com"
+}
 
-* ...
+
+2. WS name: Sign In
+POST /api/v1/users/sign_in HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+Request body:
+{
+	"user" : {
+		"login" : "amit_mhetre@ymail.com",
+		"password" : "xxxxxxxx"
+	}
+}
+
+
+Response:
+{
+    "status": 200,
+    "message": "Successfully signed in",
+    "login": "amit@example.com",
+    "token": "Bearer xxxxxxxx"
+}
+
+
+3. WS name: Book search
+POST /api/v1/books/search HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer xxxxxxxx
+Content-Type: application/json
+
+Request body:
+{
+	"keyword" : "Daffodil"
+}
+
+
+
+Response:
+{
+    "status": 200,
+    "message": "Successfully fetched books",
+    "payload": [
+        {
+            "_id": {
+                "$oid": "59e39fd141a5f0330e5a0dc3"
+            },
+            "genre": "Action and Adventure",
+            "name": "The Daffodil Sky",
+            "publication_date": "2017-10-02",
+            "short_desc": "Quia voluptatem corrupti veniam sed nulla."
+        }
+    ]
+}
