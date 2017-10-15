@@ -1,7 +1,7 @@
 Just Books Library API
 ============
 
-This application provides API for books library with simple full text search.
+This application provides API for books library with simple full text search on books name and genre, author name, reviewer name.
 
 Requirements
 --------
@@ -18,8 +18,11 @@ Database
 API documentation
 --------
 1. WS name: Sign Up
+
 POST /api/v1/users/sign_up HTTP/1.1
+
 Host: localhost:3000
+
 Content-Type: application/json
 
 Request:
@@ -39,8 +42,11 @@ Response:
 
 
 2. WS name: Sign In
+
 POST /api/v1/users/sign_in HTTP/1.1
+
 Host: localhost:3000
+
 Content-Type: application/json
 
 Request body:
@@ -62,9 +68,13 @@ Response:
 
 
 3. WS name: Book search
+
 POST /api/v1/books/search HTTP/1.1
+
 Host: localhost:3000
+
 Authorization: Bearer xxxxxxxx
+
 Content-Type: application/json
 
 Request:
