@@ -17,6 +17,7 @@ Database
 
 API documentation
 --------
+``` ruby
 1. WS name: Sign Up
 
 POST /api/v1/users/sign_up HTTP/1.1
@@ -39,8 +40,8 @@ Response:
     "message": "Successfully signed up",
     "email": "amit@example.com"
 }
-
-
+```
+``` ruby
 2. WS name: Sign In
 
 POST /api/v1/users/sign_in HTTP/1.1
@@ -57,7 +58,6 @@ Request body:
 	}
 }
 
-
 Response:
 {
     "status": 200,
@@ -65,11 +65,11 @@ Response:
     "login": "amit@example.com",
     "token": "Bearer xxxxxxxx"
 }
-
-
+```
+``` ruby
 3. WS name: Book search
 
-POST /api/v1/books/search HTTP/1.1
+POST /api/v1/books/search?page=PAGE_NUMBER HTTP/1.1
 
 Host: localhost:3000
 
@@ -86,6 +86,7 @@ Response:
 {
     "status": 200,
     "message": "Successfully fetched books",
+    "pages" : 1,
     "payload": [
         {
             "_id": {
@@ -98,3 +99,4 @@ Response:
         }
     ]
 }
+```
