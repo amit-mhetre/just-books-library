@@ -28,10 +28,10 @@ namespace :db do
         publication_date: Faker::Date.between(1.year.ago,  Date.today),
         genre: Book::GENRE.sample
       })
-      book.save
+
       # Assigning random authors for book
       rand(1..3).times do
-        book.authors.push(Author.skip(rand(Author.count)).first)
+        book.authors << Author.skip(rand(Author.count)).first
       end
 
       # Adding 5 reviews for each book
@@ -42,9 +42,10 @@ namespace :db do
           title: Faker::Name.title,
           review_desc: Faker::Matz.quote
         })
-        review.book = book
+        book.reviews << review
         review.save
       end
+      book.save
     end
   end
 
